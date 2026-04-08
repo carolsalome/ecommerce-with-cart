@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Product List with Cart</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'fm-red': 'hsl(14, 86%, 42%)',
+            'fm-green': 'hsl(159, 69%, 38%)',
+            'fm-rose-50': 'hsl(20, 50%, 98%)',
+            'fm-rose-100': 'hsl(13, 31%, 94%)',
+            'fm-rose-300': 'hsl(14, 25%, 72%)',
+            'fm-rose-400': 'hsl(7, 20%, 60%)',
+            'fm-rose-500': 'hsl(12, 20%, 44%)',
+            'fm-rose-900': 'hsl(14, 65%, 9%)',
+          },
+          fontFamily: {
+            sans: ['Red Hat Text', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; margin-top: 2rem; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    /* Hide modal scrollbar but keep functionality */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+
+<body class="bg-fm-rose-50 font-sans text-fm-rose-900 min-h-screen">
+
+  <main class="max-w-6xl mx-auto p-6 md:p-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    
+    <div class="lg:col-span-2">
+      <h1 class="text-4xl font-bold mb-10">Desserts</h1>
+      <div id="product-grid" class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-10">
+        </div>
+    </div>
+
+    <aside class="bg-white p-6 rounded-xl h-fit shadow-sm sticky top-8">
+      <h2 id="cart-count-title" class="text-2xl font-bold text-fm-red mb-6">Your Cart (0)</h2>
+      
+      <div id="cart-empty-state" class="flex flex-col items-center py-8">
+        <img src="./assets/images/illustration-empty-cart.svg" alt="Empty Cart" class="w-32 mb-4">
+        <p class="text-fm-rose-500 font-semibold text-sm">Your added items will appear here</p>
+      </div>
+
+      <div id="cart-items-container" class="hidden">
+        <div id="cart-items-list" class="divide-y divide-fm-rose-100">
+          </div>
+        
+        <div class="flex justify-between items-center py-6">
+          <span class="text-fm-rose-900">Order Total</span>
+          <span id="cart-total-price" class="text-2xl font-bold text-fm-rose-900">$0.00</span>
+        </div>
+
+        <div class="bg-fm-rose-50 flex items-center justify-center gap-2 p-4 rounded-lg mb-6">
+          <img src="./assets/images/icon-carbon-neutral.svg" alt="">
+          <p class="text-sm">This is a <span class="font-bold">carbon-neutral</span> delivery</p>
+        </div>
+
+        <button id="confirm-order-btn" class="w-full bg-fm-red hover:bg-fm-red/90 text-white font-bold py-4 rounded-full transition-all">
+          Confirm Order
+        </button>
+      </div>
+    </aside>
+
+  </main>
+
+  <div id="confirmation-modal" class="fixed inset-0 bg-black/50 z-[100] hidden flex items-end md:items-center justify-center">
+    <div class="bg-white w-full md:max-w-md p-8 rounded-t-2xl md:rounded-2xl max-h-[90vh] overflow-y-auto no-scrollbar">
+      
+      <img src="./assets/images/icon-order-confirmed.svg" alt="" class="w-10 mb-6">
+      <h2 class="text-4xl font-bold leading-tight mb-2">Order Confirmed</h2>
+      <p class="text-fm-rose-500 mb-8">We hope you enjoy your food!</p>
+
+      <div class="bg-fm-rose-50 p-6 rounded-lg mb-8">
+        <div id="modal-items-list" class="divide-y divide-fm-rose-100">
+          </div>
+        
+        <div class="flex justify-between items-center pt-6">
+          <span class="text-sm text-fm-rose-900 uppercase">Order Total</span>
+          <span id="modal-total-price" class="text-2xl font-bold text-fm-rose-900">$0.00</span>
+        </div>
+      </div>
+
+      <button id="start-new-order-btn" class="w-full bg-fm-red hover:bg-fm-red/90 text-white font-bold py-4 rounded-full transition-all">
+        Start New Order
+      </button>
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Carol Salomé</a>.
+  </div>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
