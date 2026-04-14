@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/carolsalome/seu-repositorio](https://github.com/carolsalome/ecommerce-with-cart)
-- Live Site URL: [https://seu-projeto.vercel.app](https://ecommerce-with-cart-six.vercel.app/)
+- Solution URL: [https://github.com/carolsalome/carolsalome/ecommerce-with-cart](https://github.com/carolsalome/ecommerce-with-cart)
+- Live Site URL: [https://ecommerce-with-cart-six.vercel.app](https://ecommerce-with-cart-six.vercel.app/)
 
 ## My process
 
